@@ -1,16 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using EnsureThat;
 
 namespace ReportService.Domain
 {
-    public class Employee
+    internal sealed class Employee
     {
-        public string Name { get; set; }
-        public string Department { get; set; }
-        public string  Inn { get; set; }
-        public int Salary { get; set; }
-        public string BuhCode { get; set; }
+        public Employee(string name, decimal salary)
+        {
+            EnsureArg.IsNotNullOrWhiteSpace(name, nameof(name));
+            EnsureArg.IsGte(salary, 0, nameof(salary));
+            
+            this.Name = name;
+            this.Salary = salary;
+        }
+        
+        public string Name { get; }
+        public decimal Salary { get; }
     }
 }
