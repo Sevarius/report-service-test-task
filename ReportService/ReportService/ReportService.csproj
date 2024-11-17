@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RuntimeFrameworkVersion>2.0.3</RuntimeFrameworkVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
@@ -10,29 +12,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Dapper" Version="1.50.4" />
-    <PackageReference Include="Facebook" Version="7.0.6" />
-    <PackageReference Include="iTextSharp" Version="5.5.13" />
-    <PackageReference Include="json-serialize" Version="1.1.2" />
-    <PackageReference Include="Microsoft.AppCenter.Push" Version="1.4.0" />
+    <PackageReference Include="Ensure.That" Version="10.1.0" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
-    <PackageReference Include="MySql.Data" Version="6.10.6" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="2.1.0" />
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.0.3" />
     <PackageReference Include="Npgsql" Version="3.2.6" />
   </ItemGroup>
 
   <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="MonthNameResolver">
-      <HintPath>MonthResolver\MonthNameResolver.dll</HintPath>
-      <Private>true</Private>
-    </Reference>
+    <Content Update="appsettings.Development.json">
+      <DependentUpon>appsettings.json</DependentUpon>
+    </Content>
   </ItemGroup>
 
 </Project>
